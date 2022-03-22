@@ -1,10 +1,11 @@
 #pragma once
 
 #include "WindowOS.h"
+#include "ManiacUtilities.h"
 
 namespace Maniac
 {
-	class Window
+	class MANIAC_API Window
 	{
 	public:
 		static void Init();
