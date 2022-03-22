@@ -8,7 +8,9 @@ namespace Maniac
 	{
 	public:
 		void Run();
-		virtual void Update();
+		virtual void onUpdate();
+
+	private:
 	};
 }
 
