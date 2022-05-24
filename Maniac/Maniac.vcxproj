@@ -91,7 +91,7 @@
       <LanguageStandard>stdcpp17</LanguageStandard>
       <PrecompiledHeader>Use</PrecompiledHeader>
       <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
-      <AdditionalIncludeDirectories>$(SolutionDir)glfw\include;$(SolutionDir)Maniac;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)glfw\include;$(SolutionDir)Maniac;$(SolutionDir)glad\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -109,7 +109,7 @@
       <LanguageStandard>stdcpp17</LanguageStandard>
       <PrecompiledHeader>Use</PrecompiledHeader>
       <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
-      <AdditionalIncludeDirectories>$(SolutionDir)glfw\include;$(SolutionDir)Maniac;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)glfw\include;$(SolutionDir)Maniac;$(SolutionDir)glad\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -122,12 +122,12 @@
     <ClCompile>
       <WarningLevel>Level3</WarningLevel>
       <SDLCheck>true</SDLCheck>
-      <PreprocessorDefinitions>MANIAC_LIB;MANIAC_WINDOWS;MANIAC_DEBUG</PreprocessorDefinitions>
+      <PreprocessorDefinitions>MANIAC_LIB;MANIAC_OPENGL;MANIAC_WINDOWS;MANIAC_DEBUG</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
       <LanguageStandard>stdcpp17</LanguageStandard>
       <PrecompiledHeader>Use</PrecompiledHeader>
       <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
-      <AdditionalIncludeDirectories>$(SolutionDir)glfw\include;$(SolutionDir)Maniac;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)glfw\include;$(SolutionDir)Maniac;$(SolutionDir)glad\include;$(SolutionDir)stbi;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
@@ -140,30 +140,43 @@
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <SDLCheck>true</SDLCheck>
-      <PreprocessorDefinitions>MANIAC_LIB;MANIAC_WINDOWS;</PreprocessorDefinitions>
+      <PreprocessorDefinitions>MANIAC_LIB;MANIAC_OPENGL;MANIAC_WINDOWS;</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
       <LanguageStandard>stdcpp17</LanguageStandard>
       <PrecompiledHeader>Use</PrecompiledHeader>
       <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
-      <AdditionalIncludeDirectories>$(SolutionDir)glfw\include;$(SolutionDir)Maniac;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)glfw\include;$(SolutionDir)Maniac;$(SolutionDir)glad\include;$(SolutionDir)stbi;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Console</SubSystem>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
       <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalDependencies>%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="Events.h" />
+    <ClInclude Include="KeyCodes.h" />
     <ClInclude Include="Maniac.h" />
     <ClInclude Include="ManiacApp.h" />
     <ClInclude Include="ManiacUtilities.h" />
     <ClInclude Include="pch.h" />
+    <ClInclude Include="Render.h" />
+    <ClInclude Include="RenderImplementation.h" />
+    <ClInclude Include="Shader.h" />
+    <ClInclude Include="ShaderImplementation.h" />
     <ClInclude Include="specificGLFW\GLFWWindow.h" />
+    <ClInclude Include="specificOPENGL\OpenGLRenderer.h" />
+    <ClInclude Include="specificOPENGL\OpenGLShader.h" />
+    <ClInclude Include="specificOPENGL\OpenGLSprite.h" />
+    <ClInclude Include="Sprite.h" />
+    <ClInclude Include="SpriteImplementation.h" />
     <ClInclude Include="Window.h" />
     <ClInclude Include="WindowOS.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="Events.cpp" />
     <ClCompile Include="ManiacApp.cpp" />
     <ClCompile Include="pch.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
@@ -171,12 +184,24 @@
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Create</PrecompiledHeader>
     </ClCompile>
+    <ClCompile Include="Render.cpp" />
+    <ClCompile Include="Shader.cpp" />
     <ClCompile Include="specificGLFW\GLFWWindow.cpp" />
+    <ClCompile Include="specificOPENGL\OpenGLRenderer.cpp" />
+    <ClCompile Include="specificOPENGL\OpenGLShader.cpp" />
+    <ClCompile Include="specificOPENGL\OpenGLSprite.cpp" />
+    <ClCompile Include="Sprite.cpp" />
     <ClCompile Include="Window.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\glad\glad.vcxproj">
+      <Project>{aeedfd5e-f93c-4303-989a-e26fd7329d98}</Project>
+    </ProjectReference>
     <ProjectReference Include="..\glfw\build\src\glfw.vcxproj">
       <Project>{511178fc-fbb2-32f4-9160-cad6cfa92e2e}</Project>
+    </ProjectReference>
+    <ProjectReference Include="..\stbi\stbi.vcxproj">
+      <Project>{594a3456-4a24-4085-9c36-46ba882cd153}</Project>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

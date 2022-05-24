@@ -9,6 +9,10 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Maniac", "Maniac\Maniac.vcx
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "glfw", "glfw\build\src\glfw.vcxproj", "{511178FC-FBB2-32F4-9160-CAD6CFA92E2E}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "glad", "glad\glad.vcxproj", "{1C31BAEC-D901-4734-9AD6-4380935A2E69}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "stbi", "stbi\stbi.vcxproj", "{594A3456-4A24-4085-9C36-46BA882CD153}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
@@ -41,6 +45,22 @@ Global
 		{511178FC-FBB2-32F4-9160-CAD6CFA92E2E}.Release|x64.Build.0 = Release|x64
 		{511178FC-FBB2-32F4-9160-CAD6CFA92E2E}.RelWithDebInfo|x64.ActiveCfg = RelWithDebInfo|x64
 		{511178FC-FBB2-32F4-9160-CAD6CFA92E2E}.RelWithDebInfo|x64.Build.0 = RelWithDebInfo|x64
+		{1C31BAEC-D901-4734-9AD6-4380935A2E69}.Debug|x64.ActiveCfg = Debug|x64
+		{1C31BAEC-D901-4734-9AD6-4380935A2E69}.Debug|x64.Build.0 = Debug|x64
+		{1C31BAEC-D901-4734-9AD6-4380935A2E69}.MinSizeRel|x64.ActiveCfg = Debug|x64
+		{1C31BAEC-D901-4734-9AD6-4380935A2E69}.MinSizeRel|x64.Build.0 = Debug|x64
+		{1C31BAEC-D901-4734-9AD6-4380935A2E69}.Release|x64.ActiveCfg = Release|x64
+		{1C31BAEC-D901-4734-9AD6-4380935A2E69}.Release|x64.Build.0 = Release|x64
+		{1C31BAEC-D901-4734-9AD6-4380935A2E69}.RelWithDebInfo|x64.ActiveCfg = Release|x64
+		{1C31BAEC-D901-4734-9AD6-4380935A2E69}.RelWithDebInfo|x64.Build.0 = Release|x64
+		{594A3456-4A24-4085-9C36-46BA882CD153}.Debug|x64.ActiveCfg = Debug|x64
+		{594A3456-4A24-4085-9C36-46BA882CD153}.Debug|x64.Build.0 = Debug|x64
+		{594A3456-4A24-4085-9C36-46BA882CD153}.MinSizeRel|x64.ActiveCfg = Debug|x64
+		{594A3456-4A24-4085-9C36-46BA882CD153}.MinSizeRel|x64.Build.0 = Debug|x64
+		{594A3456-4A24-4085-9C36-46BA882CD153}.Release|x64.ActiveCfg = Release|x64
+		{594A3456-4A24-4085-9C36-46BA882CD153}.Release|x64.Build.0 = Release|x64
+		{594A3456-4A24-4085-9C36-46BA882CD153}.RelWithDebInfo|x64.ActiveCfg = Release|x64
+		{594A3456-4A24-4085-9C36-46BA882CD153}.RelWithDebInfo|x64.Build.0 = Release|x64
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

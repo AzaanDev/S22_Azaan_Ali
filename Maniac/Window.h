@@ -2,6 +2,7 @@
 
 #include "WindowOS.h"
 #include "ManiacUtilities.h"
+#include "Events.h"
 
 namespace Maniac
 {
@@ -15,6 +16,9 @@ namespace Maniac
 		void PollEvents();
 		int getWidth() const;
 		int getHeight() const;
+
+		void SetKeyPressedCallBack(const std::function<void(const KeyPressedEvent&)>& KeyPressedCallBack);
+		void SetKeyReleasedCallBack(const std::function<void(const KeyReleasedEvent&)>& KeyReleasedCallBack);
 
 	private:
 		inline static Window* mInstance{ nullptr };

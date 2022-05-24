@@ -6,8 +6,8 @@ namespace Maniac
 {
 	GLFWWindow::GLFWWindow()
 	{
-		if(!glfwInit())
-			MANIAC_LOG("Error: GLFW failed to initalize")
+		if (!glfwInit())
+			MANIAC_LOG("Error: GLFW failed to initalize");
 	}
 
 	GLFWWindow::~GLFWWindow()
@@ -27,6 +27,28 @@ namespace Maniac
 		}
 
 		glfwMakeContextCurrent(mGLFWWindow);
+		glfwSwapInterval(1);
+		if (!gladLoadGLLoader((GLADloadproc)glfwGetProcAddress))
+			MANIAC_LOG("Error: Glad failed to initalize");
+
+		glfwSetWindowUserPointer(mGLFWWindow, &m_CallBacks);
+
+		glfwSetKeyCallback(mGLFWWindow, [](GLFWwindow* window, int key, int scancode, int action, int mods)
+			{
+				if (action == GLFW_PRESS || action == GLFW_REPEAT)
+				{
+					CallBacks* UserPointer{ (CallBacks*)glfwGetWindowUserPointer(window) };
+					KeyPressedEvent event{ key };
+					UserPointer->KeyPressedCallBack(event);
+				}
+				else if (action == GLFW_RELEASE)
+				{
+					CallBacks* UserPointer{ (CallBacks*)glfwGetWindowUserPointer(window) };
+					KeyReleasedEvent event{ key };
+					UserPointer->KeyReleasedCallBack(event);
+				}
+			});
+
 		return true;
 	}
 
@@ -52,5 +74,14 @@ namespace Maniac
 		int width, height;
 		glfwGetWindowSize(mGLFWWindow, &width, &height);
 		return height;
+	}
+
+	void GLFWWindow::SetKeyPressedCallBack(std::function<void(const KeyPressedEvent&)> KeyPressedCallBack)
+	{
+		m_CallBacks.KeyPressedCallBack = KeyPressedCallBack;
+	}
+	void GLFWWindow::SetKeyReleasedCallBack(std::function<void(const KeyReleasedEvent&)> KeyReleasedCallBack)
+	{
+		m_CallBacks.KeyReleasedCallBack = KeyReleasedCallBack;
 	}
 }

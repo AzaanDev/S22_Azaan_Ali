@@ -42,6 +42,17 @@ namespace Maniac
 		return mWindow->getHeight();
 	}
 
+	void Window::SetKeyPressedCallBack(const std::function<void(const KeyPressedEvent&)>& KeyPressedCallBack)
+	{
+		mWindow->SetKeyPressedCallBack(KeyPressedCallBack);
+	}
+
+	void Window::SetKeyReleasedCallBack(const std::function<void(const KeyReleasedEvent&)>& KeyReleasedCallBack)
+	{
+		mWindow->SetKeyReleasedCallBack(KeyReleasedCallBack);
+
+	}
+
 	Window::Window()
 	{
 #ifdef MANIAC_WINDOWS

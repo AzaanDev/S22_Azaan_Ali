@@ -36,6 +36,39 @@
     <ClInclude Include="specificGLFW\GLFWWindow.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="Sprite.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="SpriteImplementation.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="specificOPENGL\OpenGLSprite.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Shader.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="ShaderImplementation.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="specificOPENGL\OpenGLShader.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Render.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="RenderImplementation.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="specificOPENGL\OpenGLRenderer.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Events.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="KeyCodes.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="ManiacApp.cpp">
@@ -48,6 +81,27 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="specificGLFW\GLFWWindow.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Sprite.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="specificOPENGL\OpenGLSprite.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Shader.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="specificOPENGL\OpenGLShader.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Render.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="specificOPENGL\OpenGLRenderer.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Events.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
