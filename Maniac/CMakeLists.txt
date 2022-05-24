@@ -11,9 +11,9 @@ set(HEADER_FILES
 		SpriteImplementation.h
 		ShaderImplementation.h
 		RenderImplementation.h
-		specificGLFW/OpenGLRenderer.h
-		specificGLFW/OpenGLShader.h
-		specificGLFW/OpenGLSprite.h
+		specificOPENGL/OpenGLRenderer.h
+		specificOPENGL/OpenGLShader.h
+		specificOPENGL/OpenGLSprite.h
 		Events.h
 		KeyCodes.h
 		)
@@ -25,9 +25,9 @@ set(SOURCES_FILES
 		Sprite.cpp
 		Shader.cpp
 		Render.cpp
-		specificGLFW/OpenGLRenderer.cpp
-		specificGLFW/OpenGLShader.cpp
-		specificGLFW/OpenGLSprite.cpp
+		specificOPENGL/OpenGLRenderer.cpp
+		specificOPENGL/OpenGLShader.cpp
+		specificOPENGL/OpenGLSprite.cpp
 		Events.cpp
 		)
 
