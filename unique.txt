@@ -1,0 +1,5 @@
+Player can now move up and down with arrows keys.
+Player can shoot with space bar.
+Enemy (balls) spawn randomly and warp back to the top once they hit the bottom of the window.
+Player can warp from the left side of the screen to right side of the side and vice versa. Same with top and bottom.
+Player can shoot at balls and it will delete both sprites.
