@@ -40,6 +40,11 @@ int Entity::GetHeight() const
 	return m_Images[m_ActiveImage].GetHeight();
 }
 
+bool Entity::GetDelete() const
+{
+	return Delete;
+}
+
 void Entity::SetX(int x)
 {
 	xPos = x;
@@ -61,6 +66,11 @@ void Entity::SetSolid(bool s)
 void Entity::SetActiveImage(int i) 
 {
 	m_ActiveImage = i;
+}
+
+void Entity::SetDelete(bool d)
+{
+	Delete = d;
 }
 
 void Entity::Draw()

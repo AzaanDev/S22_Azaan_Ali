@@ -12,9 +12,12 @@ public:
 
 
 private:
-	Entity m_Player{ {"Assets/Images/image (1).png", "Assets/Images/test2.png" } };
-	std::vector<Entity> m_Enemy{ { {"Assets/Images/asteroid.png"}} };
-	int m_HorizontalSpeed{ 1 };
-	int m_EnemyYSpeed{ -5 };
+	Entity m_Player{ {"Assets/Images/ship.png"} };
+	std::vector<Entity> m_Enemy;
+	std::vector<Entity> m_Laser;
+	int m_HorizontalSpeed{ 0 };
+	int m_VerticalSpeed{ 0 };
+	int m_LaserSpeed{ 10 };
+	int m_EnemyYSpeed{ -3 };
 };
 

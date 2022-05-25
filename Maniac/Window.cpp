@@ -19,7 +19,6 @@ namespace Maniac
 	bool Window::CreateWindow(int width, int height, const std::string& name)
 	{
 		return mWindow->CreateWindow(width, height, name);
-
 	}
 
 	void Window::SwapBuffers()
